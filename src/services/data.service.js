@@ -32,7 +32,6 @@ async function searchTerm(payload) {
         nodes.forEach(node => {
           node.cpe_match.forEach(element => {
             if (element.vulnerable && element.cpe23Uri.includes(term)) {
-              console.log("Match Found:", element.cpe23Uri, "for", term);
               response.push(item.cve.CVE_data_meta.ID);
             }
           });
